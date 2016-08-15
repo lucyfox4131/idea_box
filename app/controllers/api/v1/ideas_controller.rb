@@ -24,7 +24,12 @@ class Api::V1::IdeasController < ApiBaseController
     end
   end
 
-  def idea_params
-    params.require(:idea).permit(:title, :body, :quality)
+  def destroy
+    Idea.find(params[:id]).destroy
   end
+
+  private
+    def idea_params
+      params.require(:idea).permit(:title, :body, :quality)
+    end
 end

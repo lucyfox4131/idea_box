@@ -39,6 +39,11 @@ describe "Ideas Controller" do
   end
 
   it "deletes an idea from the database" do
+    idea_1, idea_2 = create_list(:idea, 2)
 
+    delete "/api/v1/ideas/#{idea_1.id}"
+
+    expect(response).to be_success
+    expect(Idea.count).to eq(1)
   end
 end
