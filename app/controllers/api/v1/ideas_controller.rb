@@ -20,7 +20,7 @@ class Api::V1::IdeasController < ApiBaseController
     if idea.update(idea_params)
       respond_with({ idea: idea}, status: 200, location: api_v1_ideas_path)
     else
-      respond_with({errors: idea.errors}, status: 422, location: api_v1_ideas_path)
+      respond_with({ errors: idea.errors }, status: 422, location: api_v1_ideas_path)
     end
   end
 

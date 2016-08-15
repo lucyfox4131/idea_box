@@ -26,6 +26,15 @@ describe "Ideas Controller" do
     expect(idea.body).to eq("This is the body")
   end
 
+  it 'wont create a new idea without a title' do
+    params = {idea: {body: "This is the body"}}
+
+    post '/api/v1/ideas', params: params
+
+    expect(response).to_not be_success
+    expect(json["errors"]).to eq({"title" => ["can't be blank"]})
+  end
+
   it "updates an existing idea" do
     idea = create(:idea, title: "Old title", body: "This is the idea body", quality: 0)
     id = idea.id
@@ -36,6 +45,14 @@ describe "Ideas Controller" do
 
     expect(updated_idea.title).to eq("New Title")
     expect(updated_idea.quality).to eq(1)
+  end
+
+  it "can't update with invalid titles" do
+    idea = create(:idea, title: "Old title", body: "This is the idea body", quality: 0)
+    id = idea.id
+    put "/api/v1/ideas/#{id}", params: {idea: {title: "", quality: 1}}
+
+    
   end
 
   it "deletes an idea from the database" do
