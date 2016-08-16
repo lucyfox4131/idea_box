@@ -16,7 +16,7 @@ class Api::V1::IdeasController < ApiBaseController
 
   def update
     idea = Idea.find(params[:id])
-    if idea.update(idea_params)
+    if idea.update_idea(idea_params)
       respond_with( idea, status: 200, location: api_v1_ideas_path)
     else
       respond_with({ errors: idea.errors }, status: 422, location: api_v1_ideas_path)

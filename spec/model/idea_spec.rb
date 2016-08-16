@@ -12,4 +12,38 @@ RSpec.describe Idea, type: :model do
       expect(idea.quality).to eq(0)
     end
   end
+
+  context "update quality" do
+    it "can upvote, but won't upvote past 2" do
+      idea = Idea.create(title: "Title", body: "This is the body", quality: 0)
+      idea.upvote
+
+      expect(idea.quality).to eq(1)
+
+      idea.upvote
+
+      expect(idea.quality).to eq(2)
+
+      idea.upvote
+
+      expect(idea.quality).to eq(2)
+    end
+  end
+
+  context "downvote quality" do
+    it "can downvote, but won't downvote past 0" do
+      idea = Idea.create(title: "Title", body: "This is the body", quality: 2)
+      idea.downvote
+
+      expect(idea.quality).to eq(1)
+
+      idea.downvote
+
+      expect(idea.quality).to eq(0)
+
+      idea.downvote
+
+      expect(idea.quality).to eq(0)
+    end
+  end
 end
