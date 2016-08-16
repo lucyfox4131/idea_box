@@ -19,7 +19,7 @@
         <th>Delete</th>
       </tr>
       <% @ideas.each do |idea| %>
-      <tr id="table-data">
+      <tr id="table-data data<%= idea.id %>">
         <td> <%= idea.title %> </td>
         <td> <%= truncate(idea.body, length: 100, :separator => ' ')%></td>
         <td> <%= idea.quality_word %> </td>
