@@ -31,4 +31,10 @@ describe('truncateBody', function(){
     expect(truncateBody(body)).to.equal(result);
     expect(truncateBody(body).length).to.be.below(100);
   });
+
+  it("wont truncate a short body", function(){
+    var body = "Shorter than 100 characters"
+
+    expect(truncateBody(body)).to.equal(body);
+  });
 });
