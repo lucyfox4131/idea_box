@@ -20,7 +20,7 @@ $(document).ready(function(){
   };
 
   function addNewIdea(idea){
-    $("#table-headings").after("<tr><td>"+ idea.title +"</td><td>"+ truncateBody(idea.body) +"</td><td>"+ qualityOutput(idea.quality) +"</td></tr>")
+    $("#table-headings").after("<tr id='data"+ idea.id+"'><td>"+ idea.title +"</td><td>"+ truncateBody(idea.body) +"</td><td>"+ qualityOutput(idea.quality) +"</td><td><a class='delete' id='" +  idea.id + "'><i class='fa fa-trash-o' aria-hidden='true'></i></a></td></tr>")
   };
 
 
