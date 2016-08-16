@@ -45,13 +45,12 @@ describe "Ideas Controller" do
 
     expect(updated_idea.title).to eq("New Title")
 
-    put "/api/v1/ideas/#{id}", params: {idea: {quality: "upvote"}}
+    put "/api/v1/ideas/#{id}", params: {idea: {quality: "1"}}
 
     expect(response).to be_success
     updated_idea = Idea.find(id)
 
     expect(updated_idea.quality).to eq(1)
-
   end
 
   it "can't update with invalid titles" do

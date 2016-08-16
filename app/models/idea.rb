@@ -14,24 +14,4 @@ class Idea < ApplicationRecord
       "Genius"
     end
   end
-
-  def update_idea(params)
-    if params["quality"]
-      self.update_attribute("quality", update_quality(params["quality"]))
-    else
-      self.update(params)
-    end
-  end
-
-  def update_quality(quality)
-    quality == "upvote" ? upvote : downvote
-  end
-
-  def upvote
-    self.quality += 1 unless self.quality == 2
-  end
-
-  def downvote
-    self.quality -= 1 unless self.quality == 0
-  end
 end

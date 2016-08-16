@@ -26,7 +26,7 @@
       </tr>
       <tbody>
       <% @ideas.each do |idea| %>
-      <tr class="idea-row" id="table-data data<%= idea.id %>" data-title="<%= idea.title %>" data-body="<%= idea.body %>">
+      <tr class="idea-row" id="data<%= idea.id %>" data-title="<%= idea.title %>" data-body="<%= idea.body %>" data-quality=" <%= idea.quality %> ">
         <td> <%= idea.title %> </td>
         <td> <%= truncate(idea.body, length: 100, :separator => ' ')%></td>
         <td> <%= idea.quality_word %> </td>
