@@ -20,6 +20,8 @@
         <th>Title</th>
         <th>Body</th>
         <th>Quality</th>
+        <th>Upvote</th>
+        <th>Downvote</th>
         <th>Delete</th>
       </tr>
       <tbody>
@@ -28,6 +30,8 @@
         <td> <%= idea.title %> </td>
         <td> <%= truncate(idea.body, length: 100, :separator => ' ')%></td>
         <td> <%= idea.quality_word %> </td>
+        <td><a class="upvote" id="<%= idea.id %>"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
+        <td><a class="downvote" id="<%= idea.id %>"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
         <td><a class="delete" id="<%= idea.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
       </tr>
       <% end %>
