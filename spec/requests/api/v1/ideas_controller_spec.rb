@@ -8,9 +8,9 @@ describe "Ideas Controller" do
 
     expect(response).to be_success
 
-    expect(json["ideas"].first["title"]).to eq(idea_3.title)
-    expect(json["ideas"].second["title"]).to eq(idea_2.title)
-    expect(json["ideas"].second["body"]).to eq(idea_2.body)
+    expect(json.first["title"]).to eq(idea_3.title)
+    expect(json.second["title"]).to eq(idea_2.title)
+    expect(json.second["body"]).to eq(idea_2.body)
   end
 
   it "creates a new idea" do
@@ -52,7 +52,7 @@ describe "Ideas Controller" do
     id = idea.id
     put "/api/v1/ideas/#{id}", params: {idea: {title: "", quality: 1}}
 
-    
+
   end
 
   it "deletes an idea from the database" do

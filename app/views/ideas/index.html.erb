@@ -1,4 +1,9 @@
 <div class="container">
+  <div class="idea-search">
+    <h1>Search Ideas</h1>
+    <%= text_field :search, :filter, placeholder: "Search by Name or Description" %>
+    <button name="button-search">Search</button>
+  </div>
 
   <h1>New Idea</h1>
 
@@ -11,15 +16,15 @@
   <h1>Ideas</h1>
 
   <table  id="ideas-table">
-    <tbody>
       <tr id="table-headings">
         <th>Title</th>
         <th>Body</th>
         <th>Quality</th>
         <th>Delete</th>
       </tr>
+      <tbody>
       <% @ideas.each do |idea| %>
-      <tr id="table-data data<%= idea.id %>">
+      <tr class="idea-row" id="table-data data<%= idea.id %>" data-title="<%= idea.title %>" data-body="<%= idea.body %>">
         <td> <%= idea.title %> </td>
         <td> <%= truncate(idea.body, length: 100, :separator => ' ')%></td>
         <td> <%= idea.quality_word %> </td>
