@@ -17,18 +17,14 @@ class Idea < ApplicationRecord
 
   def update_idea(params)
     if params["quality"]
-      update_quality(params["quality"])
+      self.update_attribute("quality", update_quality(params["quality"]))
     else
       self.update(params)
     end
   end
 
   def update_quality(quality)
-    if quality == "upvote"
-      upvote
-    else
-      downvote
-    end
+    quality == "upvote" ? upvote : downvote
   end
 
   def upvote

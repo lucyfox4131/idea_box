@@ -58,8 +58,6 @@ describe "Ideas Controller" do
     idea = create(:idea, title: "Old title", body: "This is the idea body", quality: 0)
     id = idea.id
     put "/api/v1/ideas/#{id}", params: {idea: {title: "", quality: 1}}
-
-
   end
 
   it "deletes an idea from the database" do
