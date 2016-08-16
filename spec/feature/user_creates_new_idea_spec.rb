@@ -5,8 +5,8 @@ RSpec.feature "New Idea" do
     scenario "created and seen on page" do
       visit root_path
 
-      expect(page).to have_content("Add an Idea")
-      
+      expect(page).to have_content("New Idea")
+
     end
   end
 end
