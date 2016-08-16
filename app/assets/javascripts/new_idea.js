@@ -11,9 +11,16 @@ $(document).ready(function(){
     }
   };
 
+  function truncateBody(body){
+    if (body.length > 100){
+      var trimmedString = body.substr(0, 100)
+      body = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+    }
+    return body
+  };
+
   function addNewIdea(idea){
-    console.log(idea.title)
-    $("#table-headings").after("<tr><td>"+ idea.title +"</td><td>"+ idea.body +"</td><td>"+ qualityOutput(idea.quality) +"</td></tr>")
+    $("#table-headings").after("<tr><td>"+ idea.title +"</td><td>"+ truncateBody(idea.body) +"</td><td>"+ qualityOutput(idea.quality) +"</td></tr>")
   };
 
 
@@ -28,5 +35,8 @@ $(document).ready(function(){
       data: {idea: {title: title, body: body} },
       success: addNewIdea
     });
+
+    $("#title").val("");
+    $("#description").val("");
   });
 });
