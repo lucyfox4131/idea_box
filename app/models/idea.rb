@@ -14,4 +14,5 @@ class Idea < ApplicationRecord
       "Genius"
     end
   end
+  
 end
