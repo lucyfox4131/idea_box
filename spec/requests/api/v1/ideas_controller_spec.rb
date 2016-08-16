@@ -38,12 +38,18 @@ describe "Ideas Controller" do
   it "updates an existing idea" do
     idea = create(:idea, title: "Old title", body: "This is the idea body", quality: 0)
     id = idea.id
-    put "/api/v1/ideas/#{id}", params: {idea: {title: "New Title", quality: 1}}
+    put "/api/v1/ideas/#{id}", params: {idea: {title: "New Title"}}
 
     expect(response).to be_success
     updated_idea = Idea.find(id)
 
     expect(updated_idea.title).to eq("New Title")
+
+    put "/api/v1/ideas/#{id}", params: {idea: {quality: "1"}}
+
+    expect(response).to be_success
+    updated_idea = Idea.find(id)
+
     expect(updated_idea.quality).to eq(1)
   end
 
@@ -51,8 +57,6 @@ describe "Ideas Controller" do
     idea = create(:idea, title: "Old title", body: "This is the idea body", quality: 0)
     id = idea.id
     put "/api/v1/ideas/#{id}", params: {idea: {title: "", quality: 1}}
-
-
   end
 
   it "deletes an idea from the database" do
