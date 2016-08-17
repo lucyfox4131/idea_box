@@ -27,8 +27,8 @@
       <tbody>
       <% @ideas.each do |idea| %>
       <tr class="idea-row" id="data<%= idea.id %>" data-title="<%= idea.title %>" data-body="<%= idea.body %>" data-quality=" <%= idea.quality %> ">
-        <td> <%= idea.title %> </td>
-        <td> <%= truncate(idea.body, length: 100, :separator => ' ')%></td>
+        <td class= "title" contenteditable="true"> <%= idea.title %> </td>
+        <td class="body" contenteditable="true"> <%= truncate(idea.body, length: 100, :separator => ' ')%></td>
         <td> <%= idea.quality_word %> </td>
         <td><a class="upvote" id="<%= idea.id %>"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
         <td><a class="downvote" id="<%= idea.id %>"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
