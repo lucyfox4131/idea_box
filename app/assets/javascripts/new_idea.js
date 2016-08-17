@@ -18,10 +18,25 @@ function truncateBody(body){
 
 function addNewIdea(idea){
   $("#table-headings").after(
-    "<tr id='data"+ idea.id+"'><td>"+ idea.title +"</td><td>"+ truncateBody(idea.body) +"</td><td>"+ qualityOutput(idea.quality) +"</td> <td><a class='upvote' id='" +  idea.id + "'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></a></td> <td><a class='downvote' id='" +  idea.id + "'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></a></td> <td><a class='delete' id='" +  idea.id + "'><i class='fa fa-trash-o' aria-hidden='true'></i></a></td></tr>")
+    "<tr class='idea-row' id='data"+ idea.id+"'><td class='title' contenteditable='true'>"+ idea.title +"</td><td class='body' contenteditable='true'>"+ truncateBody(idea.body) +"</td><td>"+ qualityOutput(idea.quality) +"</td> <td><a class='upvote' id='" +  idea.id + "'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></a></td> <td><a class='downvote' id='" +  idea.id + "'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></a></td> <td><a class='delete' id='" +  idea.id + "'><i class='fa fa-trash-o' aria-hidden='true'></i></a></td></tr>")
+};
+
+function allIdeas(){
+  $.ajax({
+    url: "/api/v1/ideas",
+    method: "GET",
+    dataType: "JSON",
+    success: iterateThroughIdeas
+  });
+};
+
+function iterateThroughIdeas(ideas){
+  ideas.forEach(addNewIdea)
 };
 
 $(document).ready(function(){
+  allIdeas();
+
   console.log("New Idea AJAX");
 
   $("button[name=save-new-idea]").on('click', function(){

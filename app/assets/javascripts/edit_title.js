@@ -14,14 +14,16 @@ function editTitleOnPage(idea){
 
 $(document).ready(function(){
 
-  $(".title").focus(function(){
-    console.log("Editing a title");
+  $("html").on("click", ".title", function(){
+    $(".title").focus(function(){
+      console.log("Editing a title");
 
-  }).blur(function(thing){
-    var id = $(this).closest("tr").attr("id").replace("data", "")
-    var newText = $(this).text();
-    console.log("Done Editing")
-    editTitle(this, newText, id);
+    }).blur(function(thing){
+      var id = $(this).closest("tr").attr("id").replace("data", "")
+      var newText = $(this).text();
+      console.log("Done Editing")
+      editTitle(this, newText, id);
+    });
   });
 
 });

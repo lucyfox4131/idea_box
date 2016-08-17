@@ -14,14 +14,14 @@ function editBodyOnPage(idea){
 
 $(document).ready(function(){
 
+$("html").on("click", ".body", function(){
   $(".body").focus(function(){
     console.log("Editing a body");
-
   }).blur(function(thing){
     var id = $(this).closest("tr").attr("id").replace("data", "")
     var newText = $(this).text();
-    console.log("Done Editing Body")
     editBody(this, newText, id);
   });
+})
 
 });
