@@ -1,8 +1,38 @@
-nav {
+#nav-bar-custom {
   text-align: center;
   font-size: 40px;
+  background-color: hsl(120, 39%, 54%);
+  color: white;
+  border-color: #69b869;
+  border-radius: 0px;
 }
 
-.save-form {
-  display: inline-flex;
+body {
+  background-color: #D3D3D3;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.forms {
+  margin-bottom: 20px;
+}
+
+.save-btn {
+  margin: 2px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: hsl(120, 39%, 54%);
 }
