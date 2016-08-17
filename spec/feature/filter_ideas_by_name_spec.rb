@@ -4,6 +4,7 @@ RSpec.feature "Filter Ideas", js: true do
   scenario "by name successfully" do
     idea1 = create(:idea, title: "New Idea")
     idea2 = create(:idea, title: "asfkdj", body: "asdjhg")
+
     visit root_path
 
     expect(page).to have_content("Search Ideas")
