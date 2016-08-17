@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function deleteRow(){
   $("body").on('click', '.delete', function(){
     var id = $(this).attr("id");
 
@@ -13,4 +13,4 @@ $(document).ready(function(){
 
     $(this).closest("tr").remove();
   });
-});
+}

@@ -12,8 +12,7 @@ function editTitleOnPage(idea){
   $("#data" + idea.id).find("td").first().html("<td class='title' contenteditable='true'>"+ idea.title +"<td>")
 }
 
-$(document).ready(function(){
-
+function titleEdit(){
   $("html").on("click", ".title", function(){
     $(".title").focus(function(){
       console.log("Editing a title");
@@ -25,5 +24,4 @@ $(document).ready(function(){
       editTitle(this, newText, id);
     });
   });
-
-});
+}

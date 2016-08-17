@@ -34,11 +34,8 @@ function iterateThroughIdeas(ideas){
   ideas.forEach(addNewIdea)
 };
 
-$(document).ready(function(){
-  allIdeas();
 
-  console.log("New Idea AJAX");
-
+function newIdea(){
   $("button[name=save-new-idea]").on('click', function(){
     var title = $("#title").val();
     var body = $("#description").val();
@@ -54,4 +51,4 @@ $(document).ready(function(){
     $("#title").val("");
     $("#description").val("");
   });
-});
+}
