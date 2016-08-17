@@ -12,10 +12,12 @@ RSpec.feature "User goes to root", js: true do
       expect(page).to have_content("All The Ideas")
     end
 
-    expect(page).to have_content("Ideas")
     expect(page).to have_content("Title")
-    expect(page).to have_content("Body")
+    expect(page).to have_content("Description")
     expect(page).to have_content("Quality")
+    expect(page).to have_content("Upvote")
+    expect(page).to have_content("Downvote")
+    expect(page).to have_content("Delete")
 
   end
 end
