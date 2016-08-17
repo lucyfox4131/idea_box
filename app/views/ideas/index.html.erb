@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="col-md-6 forms text-center">
-  <h1>New Idea</h1>
+  <h1 class="body-header">New Idea</h1>
   <form class="save-form form-inline">
     <div class="form-group">
     <%= text_field_tag :title, nil, placeholder: "Title", id: "title", class: "form-control"%>
@@ -12,24 +12,21 @@
 </div>
 
 <div class="col-md-6 forms text-center">
-  <h1 >Search Ideas</h1>
+  <h1 class="body-header">Search Ideas</h1>
   <div class="idea-search form-inline">
     <%= text_field :search, :filter, placeholder: "Search", class: "form-control" %>
     <button type="button" name="button-search" class="btn btn-success">Search</button>
   </div>
 </div>
 
-<br>
-<hr>
+
 
 <div class="col-md-12">
 
-  <h1>Ideas</h1>
-
-  <table  class="table" id="ideas-table">
+  <table  class="table table-striped" id="ideas-table">
       <tr id="table-headings">
         <th>Title</th>
-        <th>Body</th>
+        <th>Description</th>
         <th>Quality</th>
         <th>Upvote</th>
         <th>Downvote</th>
