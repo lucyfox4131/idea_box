@@ -11,6 +11,7 @@ RSpec.feature "Filter Ideas", js: true do
     expect(page).to have_button("Search")
 
     fill_in "search[filter]", with: "Ne"
+
     expect(page).to have_content(idea1.title)
     expect(page).to_not have_content(idea2.title)
   end

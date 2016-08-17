@@ -7,10 +7,9 @@ describe "Ideas Controller" do
     get '/api/v1/ideas'
 
     expect(response).to be_success
-
-    expect(json.first["title"]).to eq(idea_3.title)
-    expect(json.second["title"]).to eq(idea_2.title)
-    expect(json.second["body"]).to eq(idea_2.body)
+    
+    expect(json.last["title"]).to eq(idea_3.title)
+    expect(json.last["body"]).to eq(idea_3.body)
   end
 
   it "creates a new idea" do
@@ -20,7 +19,7 @@ describe "Ideas Controller" do
 
     expect(response).to be_success
 
-    idea = Idea.first
+    idea = Idea.last
 
     expect(idea.title).to eq("New Idea")
     expect(idea.body).to eq("This is the body")

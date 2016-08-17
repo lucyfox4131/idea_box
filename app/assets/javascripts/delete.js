@@ -7,10 +7,11 @@ function deleteRow(){
       method: "DELETE",
       dataType: "JSON",
       success: function(){
-        console.log("Success")
+        console.log("Success");
       }
     })
 
     $(this).closest("tr").remove();
+
   });
 }
