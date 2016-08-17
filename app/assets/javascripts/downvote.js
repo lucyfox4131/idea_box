@@ -3,7 +3,7 @@ function qualityDown(quality, id){
     var newQuality = parseInt(quality) - 1
     $.ajax({
       url: "/api/v1/ideas/" + id,
-      method: "PUT",
+      method: "PATCH",
       dataType: "JSON",
       data: {idea: {quality: newQuality}},
       success: updateNewIdea
