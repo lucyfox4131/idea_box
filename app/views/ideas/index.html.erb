@@ -1,19 +1,38 @@
 <div class="container">
+  <div class="idea-search">
+    <h1>Search Ideas</h1>
+    <%= text_field :search, :filter, placeholder: "Search by Name or Description" %>
+    <button name="button-search">Search</button>
+  </div>
+
+  <h1>New Idea</h1>
+
+  <form class="save-form">
+    <%= text_field_tag :title, nil, placeholder: "Title", id: "title"%>
+    <%= text_field_tag :body, nil, placeholder: "Description", id: "description" %>
+    <button type="button" name="save-new-idea" id="save-btn" class="btn btn-default">Save</button>
+  </form>
 
   <h1>Ideas</h1>
 
-  <table>
-    <tbody>
-      <tr>
+  <table  id="ideas-table">
+      <tr id="table-headings">
         <th>Title</th>
         <th>Body</th>
         <th>Quality</th>
+        <th>Upvote</th>
+        <th>Downvote</th>
+        <th>Delete</th>
       </tr>
+      <tbody>
       <% @ideas.each do |idea| %>
-      <tr>
-        <td> <%= idea.title %> </td>
-        <td> <%= truncate(idea.body, length: 100, :separator => ' ')%></td>
+      <tr class="idea-row" id="data<%= idea.id %>" data-title="<%= idea.title %>" data-body="<%= idea.body %>" data-quality=" <%= idea.quality %> ">
+        <td class= "title" contenteditable="true"> <%= idea.title %> </td>
+        <td class="body" contenteditable="true"> <%= truncate(idea.body, length: 100, :separator => ' ')%></td>
         <td> <%= idea.quality_word %> </td>
+        <td><a class="upvote" id="<%= idea.id %>"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></a></td>
+        <td><a class="downvote" id="<%= idea.id %>"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></a></td>
+        <td><a class="delete" id="<%= idea.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
       </tr>
       <% end %>
     </tbody>
