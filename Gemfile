@@ -34,7 +34,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
   gem 'rspec-rails'
-  gem 'capybara'
+  gem "capybara-webkit"
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
