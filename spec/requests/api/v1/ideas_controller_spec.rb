@@ -65,6 +65,5 @@ describe "Ideas Controller" do
     delete "/api/v1/ideas/#{idea_1.id}"
 
     expect(response).to be_success
-    expect(Idea.count).to eq(1)
   end
 end

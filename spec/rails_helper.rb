@@ -13,6 +13,13 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+Capybara.javascript_driver = :webkit
+
+
+Capybara::Webkit.configure do |config|
+  config.allow_url("maxcdn.bootstrapcdn.com")
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
