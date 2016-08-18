@@ -4,7 +4,8 @@ function editTitle(tableRow, newText, id){
     method: "PATCH",
     dataType: "JSON",
     data: {idea: {title: newText}},
-    success: editTitleOnPage
+    success: editTitleOnPage,
+    error: errorMessage
   })
 };
 

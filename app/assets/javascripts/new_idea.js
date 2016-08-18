@@ -27,14 +27,14 @@ function allIdeas(){
     url: "/api/v1/ideas",
     method: "GET",
     dataType: "JSON",
-    success: iterateThroughIdeas
+    success: iterateThroughIdeas,
+    error: errorMessage
   });
 };
 
 function iterateThroughIdeas(ideas){
   ideas.forEach(addNewIdea)
 };
-
 
 function newIdea(){
   $("button[name=save-new-idea]").on('click', function(){
@@ -46,7 +46,8 @@ function newIdea(){
       method: "POST",
       dataType: "JSON",
       data: {idea: {title: title, body: body} },
-      success: addNewIdea
+      success: addNewIdea,
+      error: creationError
     });
 
     $("#title").val("");

@@ -4,7 +4,8 @@ function editBody(tableRow, newText, id){
     method: "PATCH",
     dataType: "JSON",
     data: {idea: {body: newText}},
-    success: editBodyOnPage
+    success: editBodyOnPage,
+    error: errorMessage
   })
 };
 

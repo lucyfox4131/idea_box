@@ -28,7 +28,8 @@ function addOneToQuality(quality, id){
     method: "PATCH",
     dataType: "JSON",
     data: {idea: {quality: newQuality}},
-    success: updateNewIdea
+    success: updateNewIdea,
+    error: errorMessage
   })
 };
 
@@ -39,6 +40,20 @@ function subractOneFromQuality(quality, id){
     method: "PATCH",
     dataType: "JSON",
     data: {idea: {quality: newQuality}},
-    success: updateNewIdea
+    success: updateNewIdea,
+    error: errorMessage
   })
+};
+
+function errorMessage(errorResponse){
+  console.log(errorResponse.responseText);
+};
+
+function creationError(errorResponse){
+  console.log(errorResponse.responseText)
+  if(errorResponse.responseText.includes("body")){
+    alert("Description cannot be blank")
+  }else if (errorResponse.responseText.includes("title")){
+    alert("Title cannot be blank")
+  }
 };
