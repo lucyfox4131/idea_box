@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  allIdeas();
+  newIdea();
+  searchFilter();
+  titleEdit();
+  bodyEdit();
+  upVote();
+  downVote();
+  deleteRow();
+});
