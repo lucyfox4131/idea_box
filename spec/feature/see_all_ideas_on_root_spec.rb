@@ -18,6 +18,5 @@ RSpec.feature "User goes to root", js: true do
     expect(page).to have_content("Upvote")
     expect(page).to have_content("Downvote")
     expect(page).to have_content("Delete")
-
   end
 end
