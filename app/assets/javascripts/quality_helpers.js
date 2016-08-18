@@ -23,23 +23,20 @@ function qualityChange(quality, change, id){
 
 function addOneToQuality(quality, id){
   var newQuality = parseInt(quality) + 1
-  $.ajax({
-    url: "/api/v1/ideas/" + id,
-    method: "PATCH",
-    dataType: "JSON",
-    data: {idea: {quality: newQuality}},
-    success: updateNewIdea,
-    error: errorMessage
-  })
+  updateQuality(newQuality, id)
 };
 
 function subractOneFromQuality(quality, id){
   var newQuality = parseInt(quality) - 1
+  updateQuality(newQuality, id)
+};
+
+function updateQuality(quality, id){
   $.ajax({
     url: "/api/v1/ideas/" + id,
     method: "PATCH",
     dataType: "JSON",
-    data: {idea: {quality: newQuality}},
+    data: {idea: {quality: quality}},
     success: updateNewIdea,
     error: errorMessage
   })
