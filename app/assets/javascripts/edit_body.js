@@ -9,7 +9,7 @@ function editBody(tableRow, newText, id){
 };
 
 function editBodyOnPage(idea){
-  $("#data" + idea.id).find("td:nth-child(2)").html("<td class='body' contenteditable='true'>"+ idea.body +"<td>")
+  $("#data" + idea.id).find("td:nth-child(2)").html("<td class='body' contenteditable='true'>"+ truncateBody(idea.body) +"<td>")
 }
 
 function bodyEdit(){

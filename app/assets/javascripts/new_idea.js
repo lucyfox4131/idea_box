@@ -12,6 +12,7 @@ function truncateBody(body){
   if (body.length > 100){
     var trimmedString = body.substr(0, 100)
     body = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+    body + "..."
   }
   return body
 };
