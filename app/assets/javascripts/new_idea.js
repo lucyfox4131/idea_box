@@ -21,7 +21,7 @@ function addNewIdea(idea){
   $("#table-headings").after(
     "<tr class='idea-row' id='data" + idea.id+ "'><td class='title' contenteditable='true'>"+ idea.title +
     "</td><td class='body' contenteditable='true'>" + truncateBody(idea.body) +"</td><td>" + qualityOutput(idea.quality) +
-    "</td> <td><a class='upvote' id='" +  idea.id + "'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></a></td> <td><a class='downvote' id='" +  idea.id + "'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></a></td> <td><a class='delete' id='" +  idea.id + "'><i class='fa fa-trash-o' aria-hidden='true'></i></a></td></tr>");
+    "</td> <td><a class='upvote' id='" +  idea.id + "'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i></a></td> <td><a class='downvote' id='" +  idea.id + "'><i class='fa fa-thumbs-o-down' aria-hidden='true'></i></a></td> <td><a class='delete' id='" +  idea.id + "'><i class='fa fa-trash-o' aria-hidden='true'></i></a></td><td style='display:none' class='hidden-body'>"+ idea.body +"<td></tr>");
 }
 
 function allIdeas(){
