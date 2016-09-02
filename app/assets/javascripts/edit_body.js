@@ -6,11 +6,11 @@ function editBody(tableRow, newText, id){
     data: {idea: {body: newText}},
     success: editBodyOnPage,
     error: errorMessage
-  })
-};
+  });
+}
 
 function editBodyOnPage(idea){
-  $("#data" + idea.id).find("td:nth-child(2)").html("<td class='body' contenteditable='true'>"+ truncateBody(idea.body) +"<td>")
+  $("#data" + idea.id).find("td:nth-child(2)").html("<td class='body' contenteditable='true'>"+ truncateBody(idea.body) +"<td>");
 }
 
 function bodyEdit(){
@@ -18,9 +18,9 @@ function bodyEdit(){
     $(".body").focus(function(){
       console.log("Editing a body");
     }).blur(function(thing){
-      var id = $(this).closest("tr").attr("id").replace("data", "")
+      var id = $(this).closest("tr").attr("id").replace("data", "");
       var newText = $(this).text();
       editBody(this, newText, id);
     });
-  })
+  });
 }

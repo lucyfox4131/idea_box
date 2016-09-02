@@ -38,14 +38,3 @@ describe('truncateBody', function(){
     expect(truncateBody(body)).to.equal(body);
   });
 });
-
-describe("Add new idea", function(){
-  it("adds new idea to page", function(){
-    var page = createPage
-    // ADD MORE TO THIS TEST, TEST IT ACUTALLY ADDS TO THE PAGE
-  });
-});
-
-function createPage(){
-
-};
