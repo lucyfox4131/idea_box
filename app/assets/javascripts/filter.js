@@ -5,8 +5,8 @@ function searchFilter(){
 
     $(".idea-row").each(function(index, idea){
       var title = $(this).find("td:first").text().toLowerCase();
-      var body = $(this).find("td:nth-child(2)").text().toLowerCase();
-      var ideaOrBodyContains = title.indexOf(currentSearch) !== -1 || body.indexOf(currentSearch) !== -1
+      var body = $(this).find("td:nth-child(7)").text().toLowerCase();
+      var ideaOrBodyContains = title.indexOf(currentSearch) !== -1 || body.indexOf(currentSearch) !== -1;
 
       if (ideaOrBodyContains){
         $(idea).show();
@@ -14,6 +14,6 @@ function searchFilter(){
       else {
         $(idea).hide();
       }
-    })
+    });
   });
 }
