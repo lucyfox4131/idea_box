@@ -1,24 +1,28 @@
-# README
+# All The Ideas
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### A blend of JavaScript and Rails, All the Ideas is a one page application written for the purposes of expanding my current knowledge of client side JavaScript. There is a simple Rails API serving data for the front end JavaScript.
 
-Things you may want to cover:
+#### Technologies Used:
+* JavaScript
+* Ruby on Rails
+* Ajax
+* jQuery
+* TDD using RSpec, Teaspoon, Mocha, Capybara Webkit, Factory Girl
 
-* Ruby version
+#### Functionality
+  The production application can be found [here](https://all-the-ideas.herokuapp.com/)
 
-* System dependencies
+  If you ever needed a place to record all the crazy ideas you have throughout the day, you've come to the right place. Idea box is a place for you to record those ideas. A new idea can be created with a title and a body. Quality of ideas defaults to "Swill", but can be upvoted to "Plausible" or "Genius". Downvotes can be used to decrease the quality of an idea in the opposite order. If an idea is truly terrible, you can delete it. Edit the title or body of an idea by clicking on it.
 
-* Configuration
+#### Run it Locally
 
-* Database creation
+Clone:
+``` git clone https://github.com/lucyfox4131/idea_box.git ```
 
-* Database initialization
+DB Setup: ```rails db:create db:migrate```
 
-* How to run the test suite
+Run the Server: ``` rails s```
 
-* Services (job queues, cache servers, search engines, etc.)
+Navigate to: ```localhost:3000```
 
-* Deployment instructions
-
-* ...
+Add some ideas!
