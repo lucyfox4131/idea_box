@@ -1,5 +1,5 @@
 function updateNewIdea(idea){
-  quality = qualityOutput(idea.quality);
+  let quality = qualityOutput(idea.quality);
   $("#data" + idea.id).find("td:nth-child(3)").html("<td>"+ quality +"</td>");
 }
 
@@ -22,12 +22,12 @@ function qualityChange(quality, change, id){
 }
 
 function addOneToQuality(quality, id){
-  var newQuality = parseInt(quality) + 1;
+  let newQuality = parseInt(quality) + 1;
   updateQuality(newQuality, id);
 }
 
 function subractOneFromQuality(quality, id){
-  var newQuality = parseInt(quality) - 1;
+  let newQuality = parseInt(quality) - 1;
   updateQuality(newQuality, id);
 }
 

@@ -19,8 +19,8 @@ function titleEdit(){
       console.log("Editing a title");
 
     }).blur(function(thing){
-      var id = $(this).closest("tr").attr("id").replace("data", "");
-      var newText = $(this).text();
+      let id = $(this).closest("tr").attr("id").replace("data", "");
+      let newText = $(this).text();
       console.log("Done Editing");
       editTitle(this, newText, id);
     });

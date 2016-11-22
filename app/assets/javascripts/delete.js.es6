@@ -1,6 +1,6 @@
 function deleteRow(){
   $("body").on('click', '.delete', function(){
-    var id = $(this).attr("id");
+    let id = $(this).attr("id");
     deleteItem(id);
   });
 }

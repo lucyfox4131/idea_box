@@ -10,7 +10,7 @@ function qualityOutput(quality){
 
 function truncateBody(body){
   if (body.length > 100){
-    var trimmedString = body.substr(0, 100);
+    let trimmedString = body.substr(0, 100);
     body = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")));
     body += "...";
   }
@@ -40,8 +40,8 @@ function iterateThroughIdeas(ideas){
 
 function newIdea(){
   $("button[name=save-new-idea]").on('click', function(){
-    var title = $("#title").val();
-    var body = $("#description").val();
+    let title = $("#title").val();
+    let body = $("#description").val();
 
     $.ajax({
       url: "/api/v1/ideas",

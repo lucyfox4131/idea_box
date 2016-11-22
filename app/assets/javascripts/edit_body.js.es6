@@ -15,13 +15,13 @@ function editBodyOnPage(idea){
 
 function bodyEdit(){
   $("html").on("click", ".body", function(){
-    var fullText = $(this).closest("tr").find(".hidden-body").text();
+    let fullText = $(this).closest("tr").find(".hidden-body").text();
     $(this).text(fullText);
     $(".body").focus(function(){
       console.log("Editing a body");
     }).blur(function(thing){
-      var id = $(this).closest("tr").attr("id").replace("data", "");
-      var newText = $(this).text();
+      let id = $(this).closest("tr").attr("id").replace("data", "");
+      let newText = $(this).text();
       $(this).closest("tr").find(".hidden-body").text(newText);
       editBody(this, newText, id);
     });
